@@ -1,0 +1,6 @@
+
+Migrating from 1 to 2
+http://angularjs.blogspot.com/2015/08/angular-1-and-angular-2-coexistence.html
+
+Getting Started with Angular 2 using TypeScript
+http://www.sitepoint.com/getting-started-with-angular-2-using-typescript/
