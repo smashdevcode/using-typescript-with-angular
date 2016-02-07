@@ -1,4 +1,92 @@
 
+
+Agenda
+	TS Overview - 20 minutes
+		Quick slides
+		Show basic language features
+			Data types
+			Classes
+			Interfaces
+			ES6/ES7 features
+				let/const
+				modules
+	AngularJS 1 and TS - 10 minutes
+		Tips and Tricks
+			What works well, what doesn't
+		ngForward???
+	Angular 2 and TS - 10 minutes
+		Compare and contrast...
+			Controller > Component
+			Service > Service
+				Services should be able to be shared with very little change
+
+
+
+
+Setup simple AngularJS 1 and Angular 2 examples
+	Check these into GitHub
+
+Write up list of things to consider when using AngularJS 1 with TS
+	Prefer Services to Factories
+	Use "Controller As" Syntax
+		This allows you to make your controllers TS classes
+	Follow John Papa's style guide
+		Show how to layout your controllers
+	Quick overview of ngUpgrade and ngForward
+
+How to prepare for Angular 2
+	Learn TS
+	Learn ES6 modules
+		SystemJS seems to be the preferred module loader
+	Learn RxJS observables
+	???
+
+
+
+Research
+
+	Reactive Extensions RxJS
+		I've been hearing a lot about this
+		What does it do???
+			Sounds like it provides observables
+
+	Work up an updated demo for SystemJS and ES6 Modules
+		Config help
+			https://github.com/systemjs/systemjs/blob/master/docs/config-api.md
+
+	How would we use Gulp, JSPM, or Webpack to setup a proper app structure???
+		We should separate our source from compiled code
+
+	What are each of these used for???
+		"dependencies": {
+			"angular2": "2.0.0-beta.3",
+			"systemjs": "0.19.6",
+			"es6-promise": "^3.0.2",
+			"es6-shim": "^0.33.3",
+			"reflect-metadata": "0.1.2",
+			"rxjs": "5.0.0-beta.0",
+			"zone.js": "0.5.11"
+		},
+		"devDependencies": {
+			"concurrently": "^1.0.0",
+			"lite-server": "^2.0.1",
+			"typescript": "^1.7.5"
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+Upgrading apps to Angular 2 using ngUpgrade
+http://blog.thoughtram.io/angular/2015/10/24/upgrading-apps-to-angular-2-using-ngupgrade.html
+
 Migrating from 1 to 2
 http://angularjs.blogspot.com/2015/08/angular-1-and-angular-2-coexistence.html
 
