@@ -8,14 +8,14 @@ var gulp = require('gulp'),
     eslint = require('gulp-eslint');
 
 var bases = {
-    app: 'app/',
+    client: 'client/',
     dist: 'dist/',
     nodemodules: 'node_modules/'
 };
 
 var paths = {
-    scripts: [
-        'scripts/**/*.js'
+    app: [
+        'app/**/*.js'
     ],
     libs: [
         'angular/angular.min.js',
@@ -31,14 +31,14 @@ gulp.task('clean', function () {
 });
 
 gulp.task('lint', function () {
-    return gulp.src(paths.scripts, {cwd: bases.app})
+    return gulp.src(paths.app, {cwd: bases.client})
         .pipe(eslint())
         .pipe(eslint.format())
         .pipe(eslint.failAfterError());
 });
 
-gulp.task('scripts', ['clean', 'lint'], function () {
-    return gulp.src(paths.scripts, {cwd: bases.app})
+gulp.task('app', ['clean', 'lint'], function () {
+    return gulp.src(paths.app, {cwd: bases.client})
         .pipe(sourcemaps.init())
         .pipe(uglify())
         .pipe(concat('app.min.js'))
@@ -48,7 +48,7 @@ gulp.task('scripts', ['clean', 'lint'], function () {
 });
 
 gulp.task('copy-html', ['clean'], function () {
-    return gulp.src(paths.html, {cwd: bases.app})
+    return gulp.src(paths.html, {cwd: bases.client})
         .pipe(gulp.dest(bases.dist));
 });
 
@@ -57,10 +57,10 @@ gulp.task('copy-lib', ['clean'], function () {
         .pipe(gulp.dest(bases.dist));
 });
 
-gulp.task('build', ['scripts', 'copy-html', 'copy-lib']);
+gulp.task('build', ['app', 'copy-html', 'copy-lib']);
 
 gulp.task('watch', function () {
-    gulp.watch(paths.html.concat(paths.scripts), {cwd: bases.app}, ['build']);
+    gulp.watch(paths.html.concat(paths.app), {cwd: bases.client}, ['build']);
 });
 
 gulp.task('webserver', ['build', 'watch'], function () {

@@ -2,6 +2,28 @@
 
 TODO
 
+
+
+
+Simple list/detail app
+    No styles???
+        Keep the focus on the code???
+    Setup simple controller
+    Setup service
+    Setup routes???
+        Have at least two controllers and views???
+    What other pieces???
+        Convert templates to JS???
+            How is this done???
+        Add $scope.on() or $scope.watch()???
+            Look into $scope.on() binding and memory leaks
+
+
+
+
+
+
+
 Grab modules first
     https://github.com/johnpapa/angular-styleguide#style-y400
 
@@ -41,19 +63,6 @@ function SomeController($scope, $log) {
 
 
 
-
-Simple list/detail app
-    No styles???
-        Keep the focus on the code???
-    Setup simple controller
-    Setup service
-    Setup routes???
-        Have at least two controllers and views???
-    What other pieces???
-        Convert templates to JS???
-            How is this done???
-        Add $scope.on() or $scope.watch()???
-            Look into $scope.on() binding and memory leaks
 
 Convert app to use TS
     Make notes along the way
