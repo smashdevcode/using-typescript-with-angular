@@ -2,10 +2,49 @@
 
 TODO
 
+Grab modules first
+    https://github.com/johnpapa/angular-styleguide#style-y400
+
+Install Atom snippets
+    https://github.com/johnpapa/angular-styleguide#style-y253
+
+Reorg into folders-by-feature structure
+    https://github.com/johnpapa/angular-styleguide#style-y152
+
+Reorg into more modules???
+    https://github.com/johnpapa/angular-styleguide#style-y165
+
+Assigning Controllers
+    https://github.com/johnpapa/angular-styleguide#style-y038
+
+/* recommended */
+function CustomerController() {
+    var vm = this;
+    vm.name = {};
+    vm.sendMessage = function() { };
+}
+
+function SomeController($scope, $log) {
+    var vm = this;
+    vm.title = 'Some Title';
+
+    $scope.$watch('vm.title', function(current, original) {
+        $log.info('vm.title was %s', original);
+        $log.info('vm.title is now %s', current);
+    });
+}
+
+<!-- recommended -->
+<div ng-controller="CustomerController as customer">
+    {{ customer.name }}
+</div>
+
 
 
 
 Simple list/detail app
+    No styles???
+        Keep the focus on the code???
     Setup simple controller
     Setup service
     Setup routes???
@@ -32,6 +71,9 @@ Just use NPM scripts to compile and serve???
 
 
 
+
+
+Do the Tour of Heroes A2 tutorial
 
 
 
