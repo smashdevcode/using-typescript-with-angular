@@ -7,79 +7,24 @@ TODO
 Ask Ken to review my app
 
 Convert to TS
-    Make notes along the way
     Look for ways that the code can be improved by using TS features
-
-
-
-
-
-
-
-
-    No styles???
-        Keep the focus on the code???
-
-    What other pieces???
-        Convert templates to JS???
-            How is this done???
-        Add $scope.on() or $scope.watch()???
-            Look into $scope.on() binding and memory leaks
-
-
-
-
-
-
-
-Grab modules first
-    https://github.com/johnpapa/angular-styleguide#style-y400
-
-Install Atom snippets
-    https://github.com/johnpapa/angular-styleguide#style-y253
-
-Reorg into folders-by-feature structure
-    https://github.com/johnpapa/angular-styleguide#style-y152
-
-Reorg into more modules???
-    https://github.com/johnpapa/angular-styleguide#style-y165
-
-Assigning Controllers
-    https://github.com/johnpapa/angular-styleguide#style-y038
-
-/* recommended */
-function CustomerController() {
-    var vm = this;
-    vm.name = {};
-    vm.sendMessage = function() { };
-}
-
-function SomeController($scope, $log) {
-    var vm = this;
-    vm.title = 'Some Title';
-
-    $scope.$watch('vm.title', function(current, original) {
-        $log.info('vm.title was %s', original);
-        $log.info('vm.title is now %s', current);
-    });
-}
-
-<!-- recommended -->
-<div ng-controller="CustomerController as customer">
-    {{ customer.name }}
-</div>
-
-
-
-
-Convert app to use TS
     Make notes along the way
     Change the file extensions
     Add angular typing file
-    ???
+    ES6 Features
+        Use back ticks in the menu directive
+
+Do the Tour of Heroes A2 tutorial
 
 
 
+
+
+No styles???
+    Keep the focus on the code???
+
+Install Atom snippets
+    https://github.com/johnpapa/angular-styleguide#style-y253
 
 Do source maps continue to work even after converting to TS???
 
@@ -90,7 +35,6 @@ Just use NPM scripts to compile and serve???
 
 
 
-Do the Tour of Heroes A2 tutorial
 
 
 
@@ -175,22 +119,13 @@ Research
 			"typescript": "^1.7.5"
 		}
 
+Resources
 
+    Upgrading apps to Angular 2 using ngUpgrade
+    http://blog.thoughtram.io/angular/2015/10/24/upgrading-apps-to-angular-2-using-ngupgrade.html
 
+    Migrating from 1 to 2
+    http://angularjs.blogspot.com/2015/08/angular-1-and-angular-2-coexistence.html
 
-
-
-
-
-
-
-
-
-Upgrading apps to Angular 2 using ngUpgrade
-http://blog.thoughtram.io/angular/2015/10/24/upgrading-apps-to-angular-2-using-ngupgrade.html
-
-Migrating from 1 to 2
-http://angularjs.blogspot.com/2015/08/angular-1-and-angular-2-coexistence.html
-
-Getting Started with Angular 2 using TypeScript
-http://www.sitepoint.com/getting-started-with-angular-2-using-typescript/
+    Getting Started with Angular 2 using TypeScript
+    http://www.sitepoint.com/getting-started-with-angular-2-using-typescript/
