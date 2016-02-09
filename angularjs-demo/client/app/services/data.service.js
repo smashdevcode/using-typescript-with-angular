@@ -11,21 +11,27 @@
     function dataService($q) {
         var heroesData = getHeroesData(),
             service = {
-                getHeroes: getHeroes
+                getHeroes: getHeroes,
+                addHero: addHero
             };
 
         return service;
 
         function getHeroes() {
-            return $q.resolve(heroesData);
+            return $q.resolve({ heroes: heroesData });
+        }
+
+        function addHero(hero) {
+            heroesData.push(hero);
+            return $q.resolve();
         }
 
         function getHeroesData() {
             return [
-                { name: 'Captain America' },
-                { name: 'Iron Man' },
-                { name: 'War Machine' },
-                { name: 'Ant-Man' }
+                { name: 'Captain America', team: 'Blue' },
+                { name: 'Iron Man', team: 'Red' },
+                { name: 'War Machine', team: 'Red' },
+                { name: 'Ant-Man', team: 'Blue' }
             ];
         }
     }

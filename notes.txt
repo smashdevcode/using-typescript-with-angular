@@ -4,14 +4,22 @@ TODO
 
 
 
+Ask Ken to review my app
 
-Simple list/detail app
+Convert to TS
+    Make notes along the way
+    Look for ways that the code can be improved by using TS features
+
+
+
+
+
+
+
+
     No styles???
         Keep the focus on the code???
-    Setup simple controller
-    Setup service
-    Setup routes???
-        Have at least two controllers and views???
+
     What other pieces???
         Convert templates to JS???
             How is this done???

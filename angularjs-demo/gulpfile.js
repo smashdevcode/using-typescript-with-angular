@@ -15,13 +15,16 @@ var bases = {
 
 var paths = {
     app: [
+        'app/**/*.module.js',
         'app/**/*.js'
     ],
     libs: [
         'angular/angular.min.js',
+        'angular-route/angular-route.min.js',
     ],
     html: [
-        'index.html'
+        'index.html',
+        'app/**/*.html'
     ]
 };
 
@@ -40,8 +43,8 @@ gulp.task('lint', function () {
 gulp.task('app', ['clean', 'lint'], function () {
     return gulp.src(paths.app, {cwd: bases.client})
         .pipe(sourcemaps.init())
-        .pipe(uglify())
         .pipe(concat('app.min.js'))
+        //.pipe(uglify())
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(bases.dist))
         .pipe(connect.reload());
@@ -63,7 +66,7 @@ gulp.task('watch', function () {
     gulp.watch(paths.html.concat(paths.app), {cwd: bases.client}, ['build']);
 });
 
-gulp.task('webserver', ['build', 'watch'], function () {
+gulp.task('serve', ['build', 'watch'], function () {
     connect.server({
         root: bases.dist,
         livereload: true

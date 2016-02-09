@@ -1,0 +1,19 @@
+
+<div>
+
+    <div>
+        <label for="name">Name:</label>
+        <input id="name" type="text" ng-model="vm.name">
+    </div>
+
+    <div>
+        <label for="team">Team:</label>
+        <select id="team" ng-model="vm.team">
+            <option value="Blue">Cap's Team (Blue)</option>
+            <option value="Red">Tony's Team (Red)</option>
+        </select>
+    </div>
+
+    <button ng-click="vm.addHero()">Add Hero</button>
+
+</div>
