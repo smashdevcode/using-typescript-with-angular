@@ -17,6 +17,7 @@
         "!./typings/main/**/*.d.ts"
     ],
     "files": [
+        "./client/app/components/menu.directive.ts",
         "./client/app/heroes/hero-detail.controller.ts",
         "./client/app/heroes/heroes.controller.ts",
         "./client/app/services/data.service.ts",

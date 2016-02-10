@@ -28,7 +28,7 @@
         "no-debugger": 2,
         "no-caller": 1,
         "semi": 1,
-        "quotes": [2, "single"],
+        "quotes": 0,
         "no-unreachable": 2
     },
     "globals": {

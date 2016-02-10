@@ -171,7 +171,23 @@ Now our app bootstraps, but if we browse to the "Add Hero" view, we get another 
 
 Now that we have two TypeScript files, we can play around with navigating our project via references.
 
+## Template Strings
 
+If we convert our menu directive to TypeScript, then we can use template strings to improve the formatting of our inline HTML template.
+
+```
+function menu() {
+    var template = `
+        <ul>
+            <li><a href="#/">Heroes</a></li>
+            <li><a href="#/heroes/add">Add Hero</a></li>
+        </ul>
+    `;
+    return {
+        template: template
+    };
+}
+```
 
 
 
@@ -180,7 +196,6 @@ Now that we have two TypeScript files, we can play around with navigating our pr
 
 Replace the iffys with namespaces
 
-Use multiline strings in the directive
 
 
 
@@ -192,3 +207,4 @@ Convert the data service to a class
     Change the factory to be a service
 
 Update the build process
+    Switch to using TSLint

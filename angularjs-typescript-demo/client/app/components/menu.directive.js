@@ -1,14 +1,12 @@
-
 (function () {
     'use strict';
-
     angular
         .module('app')
         .directive('menu', menu);
-
     function menu() {
+        var template = "\n            <ul>\n                <li><a href=\"#/\">Heroes</a></li>\n                <li><a href=\"#/heroes/add\">Add Hero</a></li>\n            </ul>\n        ";
         return {
-            template: '<ul><li><a href="#/">Heroes</a></li><li><a href="#/heroes/add">Add Hero</a></li></ul>'
+            template: template
         };
     }
 })();
