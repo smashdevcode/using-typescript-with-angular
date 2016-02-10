@@ -75,6 +75,48 @@ Sometimes dependencies won't get installed. If that happens for `jQuery`, then m
 typings install jquery --ambient --save
 ```
 
+Now our app should be compiling. If we inspect the `angular` variable, we can see the available type information.
+
+## Add Types
+
+### ng.IQService Interface
+
+Our data service works "as is", but aside from the Angular global object, a fair share of our types are currently `any`. We can do improve that situation by adding type information to our code.
+
+For instance, if we hover over the `$q.resolve` method, we don't get specific type information. If we update the the `$q` parameter so that is of type `: ng.IQService`, then we get type information about `$q`.
+
+### IHero Interface
+
+We can also be more explicit about our "hero" objects and the data that they contain. To do that, let's add the following interface.
+
+```
+interface IHero {
+    name: string;
+    team: string;
+}
+```
+
+Then add the interface to the `addHero` and `getHeroesData` functions.
+
+```
+function addHero(hero: IHero) {
+    heroesData.push(hero);
+    return $q.resolve();
+}
+
+function getHeroesData(): IHero[] {
+    return [
+        { name: 'Captain America', team: 'Blue' },
+        { name: 'Iron Man', team: 'Red' },
+        { name: 'War Machine', team: 'Red' },
+        { name: 'Ant-Man', team: 'Blue' }
+    ];
+}
+```
+
+
+
+
 
 
 
@@ -95,8 +137,7 @@ ES6 Features
     Use back ticks in the menu directive
 TS doesn't know about "angular"
     Using typings to bring in the type definition file
-Tips and Tricks
-    Follow John Papa's style guide
-    Use classes for controllers
-        Use "controller as" syntax
-    Prefer services to factories
+Use classes for controllers
+    Use "controller as" syntax
+Prefer services to factories
+Convert iffys to namespaces

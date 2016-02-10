@@ -8,7 +8,12 @@
 
     dataService.$inject = ['$q'];
 
-    function dataService($q) {
+    interface IHero {
+        name: string;
+        team: string;
+    }
+
+    function dataService($q: ng.IQService) {
         var heroesData = getHeroesData(),
             service = {
                 getHeroes: getHeroes,
@@ -21,12 +26,12 @@
             return $q.resolve({ heroes: heroesData });
         }
 
-        function addHero(hero) {
+        function addHero(hero: IHero) {
             heroesData.push(hero);
             return $q.resolve();
         }
 
-        function getHeroesData() {
+        function getHeroesData(): IHero[] {
             return [
                 { name: 'Captain America', team: 'Blue' },
                 { name: 'Iron Man', team: 'Red' },
