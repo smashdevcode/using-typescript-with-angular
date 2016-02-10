@@ -4,7 +4,6 @@ TODO
 
 
 
-Ask Ken to review my app
 
 Convert to TS
     Look for ways that the code can be improved by using TS features
@@ -14,14 +13,38 @@ Convert to TS
     ES6 Features
         Use back ticks in the menu directive
 
+
+
+
+
+Write up step by step instructions for converting the app to TS
+
+Add the Angular 2 demo to my repo
+    Make sure that it runs for me
+
+Presentation
+    Cover what it takes to get your environment setup
+        Show the atom-typescript page
+    Plug our next TypeScript meeting
+
+Add presentation and PDF to the repo
+
+Add simple styles to my app
+    Be sure to also update the TS version
+
+
+
+
+
+
+Ask Ken to review my app
+
 Do the Tour of Heroes A2 tutorial
-
-
-
-
 
 No styles???
     Keep the focus on the code???
+    Add simple styles???
+        https://www.google.com/search?q=iron+man+bobble+head&espv=2&biw=1440&bih=801&source=lnms&tbm=isch&sa=X&ved=0ahUKEwiK87PlgurKAhVS9WMKHY61AhYQ_AUIBygC#tbm=isch&q=pop+marvel+figures&imgrc=Ik7-Yqn45gCS1M%3A
 
 Install Atom snippets
     https://github.com/johnpapa/angular-styleguide#style-y253
@@ -50,7 +73,7 @@ Agenda
 			ES6/ES7 features
 				let/const
 				modules
-	AngularJS 1 and TS - 10 minutes
+	AngularJS 1 and TS - 15 minutes
         Starting with simple app
         Change all *.js to *.ts
         Add tsconfig.json
@@ -61,7 +84,7 @@ Agenda
             Use classes for controllers
                 Use "controller as" syntax
             Prefer services to factories
-	Angular 2 and TS - 10 minutes
+	Angular 2 and TS - 5 minutes
 		Compare and contrast...
 			Controller > Component
 			Service > Service
@@ -72,8 +95,8 @@ Agenda
 
 
 
-Setup simple AngularJS 1 and Angular 2 examples
-	Check these into GitHub
+
+
 
 Write up list of things to consider when using AngularJS 1 with TS
 	Prefer Services to Factories
