@@ -6,14 +6,6 @@ TODO
 
 
 
-Add the Angular 2 demo to my repo
-    Make sure that it runs for me
-
-
-
-
-
-
 Also update the gulp build process
     In case somebody downloads and tries running the project
 
@@ -32,6 +24,8 @@ Presentation
         Quick walkthrough of the code
     Convert one of the controllers to TS
         Walk through the steps including using typings
+    Show A2 demo
+        Highlight TS modules, classes, and decorators
     So why bother?
         Angular 2 is here
         Introduces a bunch of new concepts
@@ -43,13 +37,17 @@ Presentation
         Plus...
             You get all of the benefits of TS in the meantime
     Plug our next TypeScript meeting
+        If you want to learn more about TS decorators...
+            Come check out the next TS meetup
 
 Add presentation and PDF to the repo
 
 Rehearse presentation
 
 Add simple styles to my app
-    Be sure to also update the TS version
+    Be sure to also update the TS and A2 versions
+    Graphic ideas
+        https://www.google.com/search?q=iron+man+bobble+head&espv=2&biw=1440&bih=801&source=lnms&tbm=isch&sa=X&ved=0ahUKEwiK87PlgurKAhVS9WMKHY61AhYQ_AUIBygC#tbm=isch&q=pop+marvel+figures&imgrc=Ik7-Yqn45gCS1M%3A
 
 
 
@@ -59,11 +57,6 @@ Add simple styles to my app
 
 
 Do the Tour of Heroes A2 tutorial
-
-No styles???
-    Keep the focus on the code???
-    Add simple styles???
-        https://www.google.com/search?q=iron+man+bobble+head&espv=2&biw=1440&bih=801&source=lnms&tbm=isch&sa=X&ved=0ahUKEwiK87PlgurKAhVS9WMKHY61AhYQ_AUIBygC#tbm=isch&q=pop+marvel+figures&imgrc=Ik7-Yqn45gCS1M%3A
 
 Install Atom snippets
     https://github.com/johnpapa/angular-styleguide#style-y253
