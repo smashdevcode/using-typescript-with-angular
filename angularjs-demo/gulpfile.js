@@ -19,13 +19,17 @@ var paths = {
         'app/**/*.js'
     ],
     libs: [
-        'angular/angular.min.js',
-        'angular-route/angular-route.min.js',
+        'angular/angular.js',
+        'angular-route/angular-route.js',
     ],
     html: [
         'index.html',
         'app/**/*.html'
     ]
+};
+
+var fileNames = {
+    appOutputFileName: 'app.js'
 };
 
 gulp.task('clean', function () {
@@ -43,7 +47,7 @@ gulp.task('lint', function () {
 gulp.task('app', ['clean', 'lint'], function () {
     return gulp.src(paths.app, {cwd: bases.client})
         .pipe(sourcemaps.init())
-        .pipe(concat('app.min.js'))
+        .pipe(concat(fileNames.appOutputFileName))
         //.pipe(uglify())
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(bases.dist))

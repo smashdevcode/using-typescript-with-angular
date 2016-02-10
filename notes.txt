@@ -4,10 +4,15 @@ TODO
 
 
 
+Switch to using the minified version of Angular
+    Test error messages
+
 
 
 Also update the gulp build process
     In case somebody downloads and tries running the project
+
+
 
 
 
@@ -39,39 +44,6 @@ Presentation
     Plug our next TypeScript meeting
         If you want to learn more about TS decorators...
             Come check out the next TS meetup
-
-Add presentation and PDF to the repo
-
-Rehearse presentation
-
-Add simple styles to my app
-    Be sure to also update the TS and A2 versions
-    Graphic ideas
-        https://www.google.com/search?q=iron+man+bobble+head&espv=2&biw=1440&bih=801&source=lnms&tbm=isch&sa=X&ved=0ahUKEwiK87PlgurKAhVS9WMKHY61AhYQ_AUIBygC#tbm=isch&q=pop+marvel+figures&imgrc=Ik7-Yqn45gCS1M%3A
-
-
-
-
-
-
-
-
-Do the Tour of Heroes A2 tutorial
-
-Install Atom snippets
-    https://github.com/johnpapa/angular-styleguide#style-y253
-
-Do source maps continue to work even after converting to TS???
-
-Just use NPM scripts to compile and serve???
-    Like the Angular 2 demo???
-
-
-
-
-
-
-
 
 
 
@@ -107,9 +79,6 @@ Agenda
 
 
 
-
-
-
 Write up list of things to consider when using AngularJS 1 with TS
 	Prefer Services to Factories
 	Use "Controller As" Syntax
@@ -127,7 +96,40 @@ How to prepare for Angular 2
 
 
 
+
+
+
+Add presentation and PDF to the repo
+
+
+
+
+
+
+3pm Rehearse presentation
+
+4pm Add simple styles to my app
+    Be sure to also update the TS and A2 versions
+    Graphic ideas
+        https://www.google.com/search?q=iron+man+bobble+head&espv=2&biw=1440&bih=801&source=lnms&tbm=isch&sa=X&ved=0ahUKEwiK87PlgurKAhVS9WMKHY61AhYQ_AUIBygC#tbm=isch&q=pop+marvel+figures&imgrc=Ik7-Yqn45gCS1M%3A
+
+5pm Travel
+
+
+
+
+
+
+
+
+
+
+
+
+
 Research
+
+    Tour of Heroes A2 tutorial
 
 	Reactive Extensions RxJS
 
