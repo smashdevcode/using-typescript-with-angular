@@ -189,12 +189,36 @@ function menu() {
 }
 ```
 
+## Namespaces
+
+We can replace all of our IIFEs with TypeScript namespaces.
+
+```
+namespace App.Heroes {
+    ...
+}
+```
+
+Once we have our namespaces in place, we can then move the data service interfaces out of the global namespace. When we do that, we need to `export` the IDataService interface.
+
+```
+export interface IDataService {
+    getHeroes(): ng.IPromise<{ heroes: IHero[] }>;
+    addHero(hero: IHero): ng.IPromise<void>;
+}
+```
+
+Then in the HeroDetailController, we need to add the namespace to the IDataService parameter type.
+
+```
+constructor(private $location: ng.ILocationService,
+        private dataService: App.Services.IDataService) {
+    this.name = '';
+    this.team = 'Blue';
+}
+```
 
 
-
-
-
-Replace the iffys with namespaces
 
 
 

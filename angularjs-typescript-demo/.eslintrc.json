@@ -19,7 +19,7 @@
         "no-unused-vars": 1,
         "new-cap": 1,
         "no-shadow": 0,
-        "strict": 2,
+        "strict": 0,
         "no-invalid-regexp": 2,
         "comma-dangle": 2,
         "no-undef": 1,

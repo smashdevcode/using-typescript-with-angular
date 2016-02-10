@@ -1,19 +1,16 @@
 
-// HACK moving these interfaces to the global namespace
-// in order to make them visible to the HeroDetailController
-
-interface IDataService {
-    getHeroes(): ng.IPromise<{ heroes: IHero[] }>;
-    addHero(hero: IHero): ng.IPromise<void>;
-}
-
-interface IHero {
-    name: string;
-    team: string;
-}
-
-(function () {
+namespace App.Services {
     'use strict';
+
+    export interface IDataService {
+        getHeroes(): ng.IPromise<{ heroes: IHero[] }>;
+        addHero(hero: IHero): ng.IPromise<void>;
+    }
+
+    interface IHero {
+        name: string;
+        team: string;
+    }
 
     angular
         .module('app')
@@ -48,4 +45,4 @@ interface IHero {
             ];
         }
     }
-})();
+}

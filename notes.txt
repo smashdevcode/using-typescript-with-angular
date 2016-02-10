@@ -6,12 +6,6 @@ TODO
 
 
 
-Write up step by step instructions for converting the app to TS
-
-
-
-
-
 Add the Angular 2 demo to my repo
     Make sure that it runs for me
 
@@ -33,8 +27,6 @@ Add simple styles to my app
 
 
 
-Ask Ken to review my app
-    Cleanup unused code in the controllers
 
 Do the Tour of Heroes A2 tutorial
 

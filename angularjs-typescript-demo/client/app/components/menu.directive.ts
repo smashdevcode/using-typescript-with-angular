@@ -1,5 +1,5 @@
 
-(function () {
+namespace App.Components {
     'use strict';
 
     angular
@@ -17,4 +17,5 @@
             template: template
         };
     }
-})();
+
+}

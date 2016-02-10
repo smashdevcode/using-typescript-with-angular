@@ -1,5 +1,5 @@
 
-(function () {
+namespace App.Heroes {
     'use strict';
 
     class HeroDetailController {
@@ -8,7 +8,8 @@
 
         static $inject = ['$location', 'dataService'];
 
-        constructor(private $location: ng.ILocationService, private dataService: IDataService) {
+        constructor(private $location: ng.ILocationService,
+                private dataService: App.Services.IDataService) {
             this.name = '';
             this.team = 'Blue';
         }
@@ -26,4 +27,4 @@
     angular
         .module('app')
         .controller('HeroDetailController', HeroDetailController);
-})();
+}

@@ -1,5 +1,5 @@
 
-(function () {
+namespace App.Heroes {
     'use strict';
 
     angular
@@ -12,4 +12,4 @@
         var vm = this;
         vm.heroes = dataPrepService.heroes;
     }
-})();
+}
