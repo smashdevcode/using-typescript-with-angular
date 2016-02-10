@@ -5,24 +5,20 @@ TODO
 
 
 
-Convert to TS
-    Look for ways that the code can be improved by using TS features
-    Make notes along the way
-    Change the file extensions
-    Add angular typing file
-    ES6 Features
-        Use back ticks in the menu directive
-
-
-
-
 
 Write up step by step instructions for converting the app to TS
+
+
+
+
 
 Add the Angular 2 demo to my repo
     Make sure that it runs for me
 
 Presentation
+    Set expectations up front that 45 minutes is not enough time to cover all aspects of Angular development with TS
+        There will be some hand waving
+        But that's so we can spend more time on the fun stuff
     Cover what it takes to get your environment setup
         Show the atom-typescript page
     Plug our next TypeScript meeting
@@ -38,6 +34,7 @@ Add simple styles to my app
 
 
 Ask Ken to review my app
+    Cleanup unused code in the controllers
 
 Do the Tour of Heroes A2 tutorial
 
