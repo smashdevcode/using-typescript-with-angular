@@ -7,7 +7,7 @@ namespace App.Services {
         addHero(hero: IHero): ng.IPromise<void>;
     }
 
-    interface IHero {
+    export interface IHero {
         name: string;
         team: string;
     }

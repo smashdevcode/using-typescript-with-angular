@@ -17,11 +17,14 @@
         "!./typings/main/**/*.d.ts"
     ],
     "files": [
+        "./client/app/app.module.ts",
         "./client/app/components/menu.directive.ts",
         "./client/app/heroes/hero-detail.controller.ts",
         "./client/app/heroes/heroes.controller.ts",
+        "./client/app/route-config.ts",
         "./client/app/services/data.service.ts",
         "./typings/browser.d.ts",
+        "./typings/browser/ambient/angular-route/angular-route.d.ts",
         "./typings/browser/ambient/angular/angular.d.ts",
         "./typings/browser/ambient/jquery/jquery.d.ts"
     ],
