@@ -4,15 +4,6 @@ TODO
 
 
 
-Switch to using the minified version of Angular
-    Test error messages
-
-
-
-Also update the gulp build process
-    In case somebody downloads and tries running the project
-
-
 
 
 

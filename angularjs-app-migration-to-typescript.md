@@ -3,7 +3,7 @@
 
 ## tsconfig
 
-Add a `tsconfig.json` file to the root of the project.
+To start, we need to add a `tsconfig.json` file to the root of the project.
 
 ```
 {
@@ -30,9 +30,15 @@ Add a `tsconfig.json` file to the root of the project.
 }
 ```
 
+You can learn more about `tsconfig.json` at the TypeScript Wiki.
+
+[https://github.com/Microsoft/TypeScript/wiki/tsconfig.json](https://github.com/Microsoft/TypeScript/wiki/tsconfig.json)
+
 ## Convert JavaScript Files
 
-Change the file extension of one or more JavaScript files to `.ts`. For this example, let's start with the `./client/app/services/data.service.js` file.
+To get started with TypeScript, we don't need to convert every JavaScript file in our project. Instead, we can start by converting just one (or two) files. Just change the file extension from `.js` to `.ts`. For this example, let's start with the `./client/app/services/data.service.js` file.
+
+Unfortunately, TypeScript doesn't know anything about the `angular` global variable. This can be fixed by adding a type definition file for AngularJS to our project.
 
 ## Add Angular Typings
 
@@ -218,7 +224,7 @@ constructor(private $location: ng.ILocationService,
 }
 ```
 
-## Services
+## Service Classes
 
 We can also convert our data service into a TypeScript class. When we do that, we'll need to switch to using an AngularJS `service` instead of a `factory`. This is because an AngularJS `factory` just holds a reference to the object that our function creates and returns whereas a `service` expects a constructor function so that it can use the `new` keyword to instantiate the object itself.
 
@@ -256,4 +262,14 @@ class DataService implements IDataService {
 
 ## Next Steps
 
-Lastly, we need to update our build process to compile our TypeScript for us and replace ESLint with TSLint.
+We're currently relying upon the Atom TypeScript extension to compile our TypeScript code. A better approach would be to have our Gulp build process lint and compile our TypeScript code. Luckily, this is easy to do using the `gulp-typescript` Gulp plug-in.
+
+[https://www.npmjs.com/package/gulp-typescript](https://www.npmjs.com/package/gulp-typescript)
+
+We can lint our TypeScript using TSLint.
+
+[http://palantir.github.io/tslint/](http://palantir.github.io/tslint/)
+
+There's also a Gulp plug-in available.
+
+[https://www.npmjs.com/package/gulp-tslint](https://www.npmjs.com/package/gulp-tslint)
