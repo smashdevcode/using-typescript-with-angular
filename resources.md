@@ -3,6 +3,12 @@
 
 ## TypeScript
 
+### Atom TypeScript Extension
+
+Excellent Atom extension for working with TypeScript.
+
+[https://atom.io/packages/atom-typescript](https://atom.io/packages/atom-typescript)
+
 ### Portland TypeScript Meetup
 
 Portland area TypeScript meetup.
