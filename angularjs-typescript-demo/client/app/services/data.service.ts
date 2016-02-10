@@ -12,31 +12,25 @@ namespace App.Services {
         team: string;
     }
 
-    angular
-        .module('app')
-        .factory('dataService', dataService);
+    class DataService implements IDataService {
+        private heroesData: IHero[];
 
-    dataService.$inject = ['$q'];
+        static $inject = ['$q'];
 
-    function dataService($q: ng.IQService) {
-        var heroesData = getHeroesData(),
-            service: IDataService = {
-                getHeroes: getHeroes,
-                addHero: addHero
-            };
-
-        return service;
-
-        function getHeroes() {
-            return $q.resolve({ heroes: heroesData });
+        constructor(private $q: ng.IQService) {
+            this.heroesData = this.getHeroesData();
         }
 
-        function addHero(hero: IHero) {
-            heroesData.push(hero);
-            return $q.resolve();
+        getHeroes() {
+            return this.$q.resolve({ heroes: this.heroesData });
         }
 
-        function getHeroesData(): IHero[] {
+        addHero(hero: IHero) {
+            this.heroesData.push(hero);
+            return this.$q.resolve();
+        }
+
+        private getHeroesData(): IHero[] {
             return [
                 { name: 'Captain America', team: 'Blue' },
                 { name: 'Iron Man', team: 'Red' },
@@ -45,4 +39,8 @@ namespace App.Services {
             ];
         }
     }
+
+    angular
+        .module('app')
+        .service('dataService', DataService);
 }

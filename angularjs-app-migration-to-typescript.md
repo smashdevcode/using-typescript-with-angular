@@ -218,17 +218,8 @@ constructor(private $location: ng.ILocationService,
 }
 ```
 
+## Next Steps
 
+We could also convert the data service factory to a class, but after doing that, we need to switch from defining it as a factory to a service.
 
-
-
-
-
-
-
-
-Convert the data service to a class
-    Change the factory to be a service
-
-Update the build process
-    Switch to using TSLint
+Lastly, we need to update our build process to compile our TypeScript for us and replace ESLint with TSLint.

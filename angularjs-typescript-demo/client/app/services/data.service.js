@@ -3,31 +3,31 @@ var App;
     var Services;
     (function (Services) {
         'use strict';
-        angular
-            .module('app')
-            .factory('dataService', dataService);
-        dataService.$inject = ['$q'];
-        function dataService($q) {
-            var heroesData = getHeroesData(), service = {
-                getHeroes: getHeroes,
-                addHero: addHero
+        var DataService = (function () {
+            function DataService($q) {
+                this.$q = $q;
+                this.heroesData = this.getHeroesData();
+            }
+            DataService.prototype.getHeroes = function () {
+                return this.$q.resolve({ heroes: this.heroesData });
             };
-            return service;
-            function getHeroes() {
-                return $q.resolve({ heroes: heroesData });
-            }
-            function addHero(hero) {
-                heroesData.push(hero);
-                return $q.resolve();
-            }
-            function getHeroesData() {
+            DataService.prototype.addHero = function (hero) {
+                this.heroesData.push(hero);
+                return this.$q.resolve();
+            };
+            DataService.prototype.getHeroesData = function () {
                 return [
                     { name: 'Captain America', team: 'Blue' },
                     { name: 'Iron Man', team: 'Red' },
                     { name: 'War Machine', team: 'Red' },
                     { name: 'Ant-Man', team: 'Blue' }
                 ];
-            }
-        }
+            };
+            DataService.$inject = ['$q'];
+            return DataService;
+        }());
+        angular
+            .module('app')
+            .service('dataService', DataService);
     })(Services = App.Services || (App.Services = {}));
 })(App || (App = {}));

@@ -27,7 +27,7 @@ namespace App {
     }
 
     dataPrepService.$inject = ['dataService'];
-    function dataPrepService(dataService) {
+    function dataPrepService(dataService: App.Services.IDataService) {
         return dataService.getHeroes();
     }
 }
