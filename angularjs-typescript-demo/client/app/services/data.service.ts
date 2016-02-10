@@ -1,4 +1,17 @@
 
+// HACK moving these interfaces to the global namespace
+// in order to make them visible to the HeroDetailController
+
+interface IDataService {
+    getHeroes(): ng.IPromise<{ heroes: IHero[] }>;
+    addHero(hero: IHero): ng.IPromise<void>;
+}
+
+interface IHero {
+    name: string;
+    team: string;
+}
+
 (function () {
     'use strict';
 
@@ -8,14 +21,9 @@
 
     dataService.$inject = ['$q'];
 
-    interface IHero {
-        name: string;
-        team: string;
-    }
-
     function dataService($q: ng.IQService) {
         var heroesData = getHeroesData(),
-            service = {
+            service: IDataService = {
                 getHeroes: getHeroes,
                 addHero: addHero
             };

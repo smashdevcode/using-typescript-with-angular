@@ -1,31 +1,25 @@
-
 (function () {
     'use strict';
-
+    var HeroDetailController = (function () {
+        function HeroDetailController($location, dataService) {
+            this.$location = $location;
+            this.dataService = dataService;
+            this.name = '';
+            this.team = 'Blue';
+        }
+        HeroDetailController.prototype.addHero = function () {
+            var _this = this;
+            return this.dataService.addHero({
+                name: this.name,
+                team: this.team
+            }).then(function () {
+                _this.$location.path('/');
+            });
+        };
+        HeroDetailController.$inject = ['$location', 'dataService'];
+        return HeroDetailController;
+    }());
     angular
         .module('app')
         .controller('HeroDetailController', HeroDetailController);
-
-    HeroDetailController.$inject = ['$location', 'dataService'];
-
-    function HeroDetailController($location, dataService) {
-        var vm = this;
-        vm.name = '';
-        vm.team = 'Blue';
-        vm.addHero = addHero;
-
-        activate();
-
-        function activate() {
-        }
-
-        function addHero() {
-            return dataService.addHero({
-                    name: vm.name,
-                    team: vm.team
-                }).then(function () {
-                    $location.path('/');
-                });
-        }
-    }
 })();

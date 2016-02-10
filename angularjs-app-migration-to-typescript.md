@@ -114,7 +114,73 @@ function getHeroesData(): IHero[] {
 }
 ```
 
+## Converting Controllers to Classes
 
+Let's convert our `HeroDetailController` to be a class. First off, we'll change the file extension to `.ts`. Then we'll add the `ng.ILocationService` type to the `$location` parameter.
+
+Our `dataService` parameter does not have type information. To fix this, let's add an `IDataService` interface.
+
+```
+interface IDataService {
+    getHeroes(): ng.IPromise<{ heroes: IHero[] }>;
+    addHero(hero: IHero): ng.IPromise<void>;
+}
+```
+
+Then update the `service` variable to be of type `IDataService`. Now we can update the `dataService` parameter in our `HeroDetailController` to also be of type `IDataService`.
+
+We immediately run into a problem, but the `HeroDetailController` function cannot see the interfaces that we defined in the `dataService` IIFE (Immediately Invoked Function Expression). Using proper namespaces would resolve this issue, but let's hold off on that until later.
+
+Now, let's replace the HeroDetailController function with this class.
+
+```
+class HeroDetailController {
+    name: string;
+    team: string;
+
+    constructor(private $location: ng.ILocationService, private dataService: IDataService) {
+        this.name = '';
+        this.team = 'Blue';
+    }
+
+    addHero() {
+        return this.dataService.addHero({
+                name: this.name,
+                team: this.team
+            }).then(function () {
+                this.$location.path('/');
+            });
+    }
+}
+
+```
+
+Our app will compile, but won't bootstrap properly. The problem is due to attempting to set the `$inject` property on a variable that doesn't have a value assigned to it yet. An easy fix is to move this line to below the class definition.
+
+```
+HeroDetailController.$inject = ['$location', 'dataService'];
+```
+
+Or we can add a static field to our class.
+
+```
+static $inject = ['$location', 'dataService'];
+```
+
+Now our app bootstraps, but if we browse to the "Add Hero" view, we get another runtime error. The problem is that converting to a class has changed our named function to a function that is assigned to variable. The variable declaration is hoisted, but doesn't get assigned a value until after the call to the `angular.module.controller` method. To fix this issue, let's just move the call to `angular.module.controller` to below the class definition.
+
+Now that we have two TypeScript files, we can play around with navigating our project via references.
+
+
+
+
+
+
+
+
+Replace the iffys with namespaces
+
+Use multiline strings in the directive
 
 
 
@@ -125,19 +191,4 @@ function getHeroesData(): IHero[] {
 Convert the data service to a class
     Change the factory to be a service
 
-
-
-
-
-
-
 Update the build process
-
-ES6 Features
-    Use back ticks in the menu directive
-TS doesn't know about "angular"
-    Using typings to bring in the type definition file
-Use classes for controllers
-    Use "controller as" syntax
-Prefer services to factories
-Convert iffys to namespaces

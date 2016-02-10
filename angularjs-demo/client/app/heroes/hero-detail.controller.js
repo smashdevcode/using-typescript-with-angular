@@ -14,11 +14,6 @@
         vm.team = 'Blue';
         vm.addHero = addHero;
 
-        activate();
-
-        function activate() {
-        }
-
         function addHero() {
             return dataService.addHero({
                     name: vm.name,
