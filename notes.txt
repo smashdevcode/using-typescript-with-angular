@@ -6,6 +6,14 @@ TODO
 
 
 
+
+Also update the gulp build process
+    In case somebody downloads and tries running the project
+
+
+
+
+
 Add the Angular 2 demo to my repo
     Make sure that it runs for me
 
@@ -15,12 +23,30 @@ Presentation
         But that's so we can spend more time on the fun stuff
     Cover what it takes to get your environment setup
         Show the atom-typescript page
+    Show basic language features
+    Show demo app
+        Quick walkthrough of the code
+    Convert one of the controllers to TS
+        Walk through the steps including using typings
+    So why bother?
+        Angular 2 is here
+        Introduces a bunch of new concepts
+            TS or ES2015
+            ES2015 modules
+            etc.
+        If you start using TS today...
+            You'll be better positioned for tomorrow
+        Plus...
+            You get all of the benefits of TS in the meantime
     Plug our next TypeScript meeting
 
 Add presentation and PDF to the repo
 
+Rehearse presentation
+
 Add simple styles to my app
     Be sure to also update the TS version
+
 
 
 

@@ -218,8 +218,42 @@ constructor(private $location: ng.ILocationService,
 }
 ```
 
-## Next Steps
+## Services
 
-We could also convert the data service factory to a class, but after doing that, we need to switch from defining it as a factory to a service.
+We can also convert our data service into a TypeScript class. When we do that, we'll need to switch to using an AngularJS `service` instead of a `factory`. This is because an AngularJS `factory` just holds a reference to the object that our function creates and returns whereas a `service` expects a constructor function so that it can use the `new` keyword to instantiate the object itself.
+
+Here's what our data service class looks like.
+
+```
+class DataService implements IDataService {
+    private heroesData: IHero[];
+
+    static $inject = ['$q'];
+
+    constructor(private $q: ng.IQService) {
+        this.heroesData = this.getHeroesData();
+    }
+
+    getHeroes() {
+        return this.$q.resolve({ heroes: this.heroesData });
+    }
+
+    addHero(hero: IHero) {
+        this.heroesData.push(hero);
+        return this.$q.resolve();
+    }
+
+    private getHeroesData(): IHero[] {
+        return [
+            { name: 'Captain America', team: 'Blue' },
+            { name: 'Iron Man', team: 'Red' },
+            { name: 'War Machine', team: 'Red' },
+            { name: 'Ant-Man', team: 'Blue' }
+        ];
+    }
+}
+```
+
+## Next Steps
 
 Lastly, we need to update our build process to compile our TypeScript for us and replace ESLint with TSLint.
