@@ -3,6 +3,7 @@ TODO
 
 
 
+
 Add simple styles to my app
     Be sure to also update the TS and A2 versions
     Graphic ideas
@@ -11,31 +12,13 @@ Add simple styles to my app
 
 
 
-
-
 Just before presentation...
-
-    Copy the repo to the desktop
-    Make a copy of the demo app
-        Use a different folder name than the TS demo app
-        Add typings to the project (in order to save time)
-        Test this!!!
-    Change to Atom light theme
-
     Setup Surface Pro with the demos page
     Verify internet connection
-
     Open the following URLs
         https://atom.io/packages/atom-typescript
         http://typescriptpdx.com
-
-
-
-
-
-
-
-
+    Open my presentation
 
 
 
