@@ -1,0 +1,14 @@
+
+<div>
+
+    <h2>Cap's Team (Blue)</h2>
+    <ul>
+        <li ng-repeat="hero in vm.heroes | filter:{team:'Blue'}">{{ hero.name }}</li>
+    </ul>
+
+    <h2>Tony's Team (Red)</h2>
+    <ul>
+        <li ng-repeat="hero in vm.heroes | filter:{team:'Red'}">{{ hero.name }}</li>
+    </ul>
+
+</div>

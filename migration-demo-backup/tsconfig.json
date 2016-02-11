@@ -1,0 +1,29 @@
+{
+    "version": "1.7.5",
+    "compilerOptions": {
+        "target": "es5",
+        "declaration": false,
+        "noImplicitAny": false,
+        "removeComments": true,
+        "noLib": false,
+        "sourceMap": false,
+        "module": "system",
+        "experimentalDecorators": true
+    },
+    "filesGlob": [
+        "./**/*.ts",
+        "!./node_modules/**/*.ts",
+        "!./typings/main.d.ts",
+        "!./typings/main/**/*.d.ts"
+    ],
+    "files": [
+        "./client/app/heroes/hero-detail.controller.ts",
+        "./typings/browser.d.ts",
+        "./typings/browser/ambient/angular-route/angular-route.d.ts",
+        "./typings/browser/ambient/angular/angular.d.ts",
+        "./typings/browser/ambient/jquery/jquery.d.ts"
+    ],
+    "atom": {
+        "rewriteTsconfig": true
+    }
+}

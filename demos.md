@@ -152,6 +152,8 @@ There's a whole bunch of stuff that we aren't covering here.
 
 #### Add `tsconfig.json` file.
 
+Snippet: `_tsconfig`
+
 ```
 {
     "version": "1.7.5",
@@ -187,18 +189,23 @@ TypeScript won't know about AngularJS, so we need to bring the appropriate type 
 
 Let's convert our `HeroDetailController` to be a class. First off, we'll change the file extension to `.ts`. Then we'll add the `ng.ILocationService` type to the `$location` parameter.
 
-Our `dataService` parameter does not have type information. To fix this, let's add an `IDataService` interface.
+Our `dataService` parameter does not have type information. To fix this, let's add `IHero` and `IDataService` interfaces.
+
+Snippet: `_interfaces`
 
 ```
+interface IHero {
+    name: string;
+    team: string;
+}
+
 interface IDataService {
     getHeroes(): ng.IPromise<{ heroes: IHero[] }>;
     addHero(hero: IHero): ng.IPromise<void>;
 }
 ```
 
-Then update the `service` variable to be of type `IDataService`. Now we can update the `dataService` parameter in our `HeroDetailController` to also be of type `IDataService`.
-
-We immediately run into a problem, but the `HeroDetailController` function cannot see the interfaces that we defined in the `dataService` IIFE (Immediately Invoked Function Expression). Using proper namespaces would resolve this issue, but let's hold off on that until later.
+Now we can update the `dataService` parameter in our `HeroDetailController` to be of type `IDataService`.
 
 Now, let's replace the HeroDetailController function with this class.
 
@@ -212,11 +219,11 @@ class HeroDetailController {
         this.team = 'Blue';
     }
 
-    addHero() {
+    addHero = () => {
         return this.dataService.addHero({
                 name: this.name,
                 team: this.team
-            }).then(function () {
+            }).then(() => {
                 this.$location.path('/');
             });
     }
