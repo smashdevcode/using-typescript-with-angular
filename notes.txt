@@ -3,62 +3,13 @@ TODO
 
 
 
-
-
-Presentation
-
-    So why bother?
-        Angular 2 is here
-        Introduces a bunch of new concepts
-            TS or ES2015
-            ES2015 modules
-            etc.
-        If you start using TS today...
-            You'll be better positioned for tomorrow
-        Plus...
-            You get all of the benefits of TS in the meantime
-
-    AngularJS 1 and TS
-		Tips and Tricks
-            Follow John Papa's style guide
-            Use classes for controllers
-                Use "controller as" syntax
-            Prefer services to factories
-
-    Next steps
-        ngForward can make your AngularJS 1.x code feel more like Angular 2
-        Get familiar with ES6 modules and a module loader like SystemJS
-
-
-
-
-
-
-
-
-Write up list of things to consider when using AngularJS 1 with TS
-	Prefer Services to Factories
-	Use "Controller As" Syntax
-		This allows you to make your controllers TS classes
-	Follow John Papa's style guide
-		Show how to layout your controllers
-	Quick overview of ngUpgrade and ngForward
-
-How to prepare for Angular 2
-	Learn TS
-	Learn ES6 modules
-		SystemJS seems to be the preferred module loader
-	Learn RxJS observables
-	???
-
-
-
-
-
-
-Add presentation and PDF to the repo
-
 Run through the TS migration
+
+
+
+
+
+
 
 Just before presentation...
 
