@@ -126,3 +126,127 @@ console.log(addResult);
 ### Namespaces
 
 To keep our code from bleeding into the global namespace, we can wrap our code in a namespace.
+
+### And More!
+
+There's a whole bunch of stuff that we aren't covering here.
+
+* Modules
+* Decorators
+* Async/Await
+* Template Strings
+* Let/Const
+* And more!!!
+
+## AngularJS Demo App
+
+### Overview
+
+1. Show it running in the browser.
+1. Give a quick rundown of the code files.
+ 1. We've got two controllers and views (one for each screen in our app).
+ 1. We've got a data service that uses in-memory data (i.e. an array of objects).
+ 1. We've got a very simple directive for our menu.
+
+### Converting to TypeScript
+
+#### Add `tsconfig.json` file.
+
+```
+{
+    "version": "1.7.5",
+    "compilerOptions": {
+        "target": "es5",
+        "declaration": false,
+        "noImplicitAny": false,
+        "removeComments": true,
+        "noLib": false,
+        "sourceMap": false,
+        "module": "system",
+        "experimentalDecorators": true
+    },
+    "filesGlob": [
+        "./**/*.ts",
+        "!./node_modules/**/*.ts",
+        "!./typings/main.d.ts",
+        "!./typings/main/**/*.d.ts"
+    ],
+    "files": [
+    ],
+    "atom": {
+        "rewriteTsconfig": true
+    }
+}
+```
+
+#### Hand Waving
+
+TypeScript won't know about AngularJS, so we need to bring the appropriate type definition files into our project. We don't have time to cover that as part of this presentation, so I already took care of that earlier.
+
+#### Convert a Controller
+
+Let's convert our `HeroDetailController` to be a class. First off, we'll change the file extension to `.ts`. Then we'll add the `ng.ILocationService` type to the `$location` parameter.
+
+Our `dataService` parameter does not have type information. To fix this, let's add an `IDataService` interface.
+
+```
+interface IDataService {
+    getHeroes(): ng.IPromise<{ heroes: IHero[] }>;
+    addHero(hero: IHero): ng.IPromise<void>;
+}
+```
+
+Then update the `service` variable to be of type `IDataService`. Now we can update the `dataService` parameter in our `HeroDetailController` to also be of type `IDataService`.
+
+We immediately run into a problem, but the `HeroDetailController` function cannot see the interfaces that we defined in the `dataService` IIFE (Immediately Invoked Function Expression). Using proper namespaces would resolve this issue, but let's hold off on that until later.
+
+Now, let's replace the HeroDetailController function with this class.
+
+```
+class HeroDetailController {
+    name: string;
+    team: string;
+
+    constructor(private $location: ng.ILocationService, private dataService: IDataService) {
+        this.name = '';
+        this.team = 'Blue';
+    }
+
+    addHero() {
+        return this.dataService.addHero({
+                name: this.name,
+                team: this.team
+            }).then(function () {
+                this.$location.path('/');
+            });
+    }
+}
+```
+
+Our app will compile, but won't bootstrap properly. The problem is due to attempting to set the `$inject` property on a variable that doesn't have a value assigned to it yet. An easy fix is to move this line to below the class definition.
+
+```
+HeroDetailController.$inject = ['$location', 'dataService'];
+```
+
+Or we can add a static field to our class.
+
+```
+static $inject = ['$location', 'dataService'];
+```
+
+Now our app bootstraps, but if we browse to the "Add Hero" view, we get another runtime error. The problem is that converting to a class has changed our named function to a function that is assigned to variable. The variable declaration is hoisted, but doesn't get assigned a value until after the call to the `angular.module.controller` method. To fix this issue, let's just move the call to `angular.module.controller` to below the class definition.
+
+#### Step by Step Instructions
+
+I wrote up step-by-step instructions and included them with my presentation materials.
+
+## Angular 2 Demo
+
+### Overview
+
+1. Show it running in the browser.
+1. Give a quick rundown of the code files.
+ 1. We got exactly one `component` which is roughly the equivalent to a `controller` in AngularJS 1.x.
+ 1. Notice that we have a interface and a class.
+ 1. Notice that we're using a decorator to declare the metadata about the component, including the template to use.

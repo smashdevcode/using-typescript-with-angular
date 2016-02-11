@@ -1,31 +1,11 @@
 
 TODO
 
-Just before presentation...
-    Copy the repo to the desktop
-    Make a copy of the demo app
-        Use a different folder name than the TS demo app
-    Verify internet connection
-    Change to Atom light theme
-    Open the following URLs
-        https://atom.io/packages/atom-typescript
-        http://typescriptpdx.com
-
-
 
 
 
 
 Presentation
-
-    Show demo app
-        Quick walkthrough of the code
-
-    Convert one of the controllers to TS
-        Walk through the steps including using typings
-
-    Show A2 demo
-        Highlight TS modules, classes, and decorators
 
     So why bother?
         Angular 2 is here
@@ -38,38 +18,21 @@ Presentation
         Plus...
             You get all of the benefits of TS in the meantime
 
-
-
-
-Agenda
-	TS Overview - 20 minutes
-		Quick slides
-		Show basic language features
-			Data types
-			Classes
-			Interfaces
-			ES6/ES7 features
-				let/const
-				modules
-	AngularJS 1 and TS - 15 minutes
-        Starting with simple app
-        Change all *.js to *.ts
-        Add tsconfig.json
-        TS doesn't know about "angular"
-            Using typings to bring in the type definition file
+    AngularJS 1 and TS
 		Tips and Tricks
             Follow John Papa's style guide
             Use classes for controllers
                 Use "controller as" syntax
             Prefer services to factories
-	Angular 2 and TS - 5 minutes
-		Compare and contrast...
-			Controller > Component
-			Service > Service
-				Services should be able to be shared with very little change
+
     Next steps
         ngForward can make your AngularJS 1.x code feel more like Angular 2
         Get familiar with ES6 modules and a module loader like SystemJS
+
+
+
+
+
 
 
 
@@ -95,12 +58,29 @@ How to prepare for Angular 2
 
 Add presentation and PDF to the repo
 
+Run through the TS migration
+
+Just before presentation...
+
+    Copy the repo to the desktop
+    Make a copy of the demo app
+        Use a different folder name than the TS demo app
+        Add typings to the project (in order to save time)
+        Test this!!!
+    Change to Atom light theme
+
+    Setup Surface Pro with the demos page
+    Verify internet connection
+
+    Open the following URLs
+        https://atom.io/packages/atom-typescript
+        http://typescriptpdx.com
 
 
 
 
 
-3pm Rehearse presentation
+
 
 4pm Add simple styles to my app
     Be sure to also update the TS and A2 versions
