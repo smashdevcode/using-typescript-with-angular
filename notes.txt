@@ -1,17 +1,6 @@
 
 TODO
 
-
-
-
-Add simple styles to my app
-    Be sure to also update the TS and A2 versions
-    Graphic ideas
-        https://www.google.com/search?q=iron+man+bobble+head&espv=2&biw=1440&bih=801&source=lnms&tbm=isch&sa=X&ved=0ahUKEwiK87PlgurKAhVS9WMKHY61AhYQ_AUIBygC#tbm=isch&q=pop+marvel+figures&imgrc=Ik7-Yqn45gCS1M%3A
-
-
-
-
 Just before presentation...
     Setup Surface Pro with the demos page
     Verify internet connection
@@ -25,6 +14,10 @@ Just before presentation...
 
 
 
+Add simple styles to my app
+    Be sure to also update the TS, A2, and Temp versions
+    Graphic ideas
+        https://www.google.com/search?q=iron+man+bobble+head&espv=2&biw=1440&bih=801&source=lnms&tbm=isch&sa=X&ved=0ahUKEwiK87PlgurKAhVS9WMKHY61AhYQ_AUIBygC#tbm=isch&q=pop+marvel+figures&imgrc=Ik7-Yqn45gCS1M%3A
 
 Research
 
