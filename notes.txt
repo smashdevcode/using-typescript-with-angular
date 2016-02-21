@@ -6,6 +6,7 @@ TODO
 
 Setup complete Angular 2 version of the app
 
+Bring styles over!!!
 
 
 
