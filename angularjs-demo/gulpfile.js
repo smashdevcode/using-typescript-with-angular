@@ -21,15 +21,20 @@ var paths = {
     libs: [
         'angular/angular.js',
         'angular-route/angular-route.js',
+        'bootstrap/dist/css/bootstrap.css'
     ],
     html: [
         'index.html',
         'app/**/*.html'
+    ],
+    css: [
+        'app/**/*.css'
     ]
 };
 
 var fileNames = {
-    appOutputFileName: 'app.js'
+    appOutputFileName: 'app.js',
+    cssOutputFileName: 'app.css'
 };
 
 gulp.task('clean', function () {
@@ -54,6 +59,13 @@ gulp.task('app', ['clean', 'lint'], function () {
         .pipe(connect.reload());
 });
 
+gulp.task('css', ['clean'], function () {
+    return gulp.src(paths.css, {cwd: bases.client})
+        .pipe(concat(fileNames.cssOutputFileName))
+        .pipe(gulp.dest(bases.dist))
+        .pipe(connect.reload());
+});
+
 gulp.task('copy-html', ['clean'], function () {
     return gulp.src(paths.html, {cwd: bases.client})
         .pipe(gulp.dest(bases.dist));
@@ -64,10 +76,10 @@ gulp.task('copy-lib', ['clean'], function () {
         .pipe(gulp.dest(bases.dist));
 });
 
-gulp.task('build', ['app', 'copy-html', 'copy-lib']);
+gulp.task('build', ['app', 'css', 'copy-html', 'copy-lib']);
 
 gulp.task('watch', function () {
-    gulp.watch(paths.html.concat(paths.app), {cwd: bases.client}, ['build']);
+    gulp.watch(paths.html.concat(paths.app).concat(paths.css), {cwd: bases.client}, ['build']);
 });
 
 gulp.task('serve', ['build', 'watch'], function () {

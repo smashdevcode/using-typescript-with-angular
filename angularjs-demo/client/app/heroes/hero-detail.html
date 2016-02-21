@@ -1,19 +1,21 @@
 
 <div>
 
-    <div>
+    <div class="form-group">
         <label for="name">Name:</label>
-        <input id="name" type="text" ng-model="vm.name">
+        <input id="name" type="text" class="form-control" ng-model="vm.name">
     </div>
 
-    <div>
+    <div class="form-group">
         <label for="team">Team:</label>
-        <select id="team" ng-model="vm.team">
+        <select id="team" class="form-control" ng-model="vm.team">
             <option value="Blue">Cap's Team (Blue)</option>
             <option value="Red">Tony's Team (Red)</option>
         </select>
     </div>
 
-    <button ng-click="vm.addHero()">Add Hero</button>
+    <div class="form-group">
+        <button ng-click="vm.addHero()" class="btn btn-default btn-lg">Add Hero</button>
+    </div>
 
 </div>
