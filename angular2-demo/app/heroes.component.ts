@@ -1,32 +1,25 @@
-import {Component} from 'angular2/core';
+import {Component, OnInit} from 'angular2/core';
+
+import {IHero} from './hero';
+import {DataService} from './data.service';
 
 @Component({
-    selector: 'heroes',
-    template: `
-        <h1>Captain America: Civil War</h1>
-        <li *ngFor="#hero of heroes">
-            {{ hero.name }} ({{ hero.team }})
-        </li>
-    `
+    templateUrl: 'app/heroes.component.html'
 })
-export class HeroesComponent {
-    heroes: IHero[];
+export class HeroesComponent implements OnInit {
+    blueHeroes: IHero[];
+    redHeroes: IHero[];
 
-    constructor() {
-        this.heroes = this.getHeroesData();
+    constructor(private _dataService: DataService) { }
+
+    ngOnInit() {
+        this.getHeroes();
     }
 
-    private getHeroesData() {
-        return [
-            { name: 'Captain America', team: 'Blue' },
-            { name: 'Iron Man', team: 'Red' },
-            { name: 'War Machine', team: 'Red' },
-            { name: 'Ant-Man', team: 'Blue' }
-        ];
+    getHeroes() {
+        this._dataService.getHeroes().then(heroes => {
+            this.blueHeroes = heroes.filter(hero => hero.team === 'Blue');
+            this.redHeroes = heroes.filter(hero => hero.team === 'Red');
+        });
     }
-}
-
-interface IHero {
-    name: string;
-    team: string;
 }

@@ -1,28 +1,6 @@
 
 TODO
 
-
-
-
-Setup complete Angular 2 version of the app
-
-Bring styles over!!!
-
-
-
-Move copies of the app to the decorators presentation
-    Make "temp" version of the Angular 2 app
-    Remove all decorators from all classes
-    Make sure that it still compiles
-    Write up notes for adding the decorators back
-
-
-
-
-
-
-
-
 Just before presentation...
     Setup Surface Pro with the demos page
     Verify internet connection
@@ -30,8 +8,6 @@ Just before presentation...
         https://atom.io/packages/atom-typescript
         http://typescriptpdx.com
     Open my presentation
-
-
 
 
 

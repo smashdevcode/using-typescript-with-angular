@@ -1,4 +1,4 @@
-System.register(['angular2/core', './data.service'], function(exports_1) {
+System.register(['angular2/core', 'angular2/router', './data.service'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,41 +8,46 @@ System.register(['angular2/core', './data.service'], function(exports_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, data_service_1;
-    var HeroesComponent;
+    var core_1, router_1, data_service_1;
+    var HeroDetailComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             },
+            function (router_1_1) {
+                router_1 = router_1_1;
+            },
             function (data_service_1_1) {
                 data_service_1 = data_service_1_1;
             }],
         execute: function() {
-            HeroesComponent = (function () {
-                function HeroesComponent(_dataService) {
+            HeroDetailComponent = (function () {
+                function HeroDetailComponent(_router, _dataService) {
+                    this._router = _router;
                     this._dataService = _dataService;
+                    this.hero = {
+                        name: '',
+                        team: 'Blue'
+                    };
                 }
-                HeroesComponent.prototype.ngOnInit = function () {
-                    this.getHeroes();
-                };
-                HeroesComponent.prototype.getHeroes = function () {
+                HeroDetailComponent.prototype.addHero = function () {
                     var _this = this;
-                    this._dataService.getHeroes().then(function (heroes) {
-                        _this.blueHeroes = heroes.filter(function (hero) { return hero.team === 'Blue'; });
-                        _this.redHeroes = heroes.filter(function (hero) { return hero.team === 'Red'; });
+                    return this._dataService.addHero(this.hero)
+                        .then(function () {
+                        _this._router.navigate(['Heroes']);
                     });
                 };
-                HeroesComponent = __decorate([
+                HeroDetailComponent = __decorate([
                     core_1.Component({
-                        templateUrl: 'app/heroes.component.html'
+                        templateUrl: 'app/hero-detail.component.html'
                     }), 
-                    __metadata('design:paramtypes', [data_service_1.DataService])
-                ], HeroesComponent);
-                return HeroesComponent;
+                    __metadata('design:paramtypes', [router_1.Router, data_service_1.DataService])
+                ], HeroDetailComponent);
+                return HeroDetailComponent;
             })();
-            exports_1("HeroesComponent", HeroesComponent);
+            exports_1("HeroDetailComponent", HeroDetailComponent);
         }
     }
 });
-//# sourceMappingURL=heroes.component.js.map
+//# sourceMappingURL=hero-detail.component.js.map
